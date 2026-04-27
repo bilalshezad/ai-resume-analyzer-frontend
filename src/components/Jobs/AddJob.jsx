@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { handleLoading, } from '../../utils';
-import { toast, ToastContainer} from 'react-toastify'
+import { toast} from 'react-toastify'
 
 
 export default function AddJob({ reload }) {

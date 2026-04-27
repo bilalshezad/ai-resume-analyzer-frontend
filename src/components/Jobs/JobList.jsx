@@ -1,5 +1,5 @@
 import React, {  useState , useEffect} from "react";
-
+  
 export default function JobList({ reload }) {
   const [jobs, setJobs] = useState([]);
   const [editId, setEditId] = useState(null);
