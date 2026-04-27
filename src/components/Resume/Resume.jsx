@@ -43,7 +43,7 @@ useEffect(() => {
       const token = localStorage.getItem('Token');
       if(!token) return;
       try {
-         const REACT_APP_API_URL = `http://localhost:5000/user/resume/get`
+         const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/resume/get`
         const res = await fetch(REACT_APP_API_URL , {
           method : "GET",
            headers: { "Authorization": `Bearer ${token}` }
@@ -79,7 +79,7 @@ useEffect(() => {
     try {
       setloading(true);
       const LoadingToast = handleLoading("Analyzing your resume... ⏳") 
-       const REACT_APP_API_URL = `http://localhost:5000/user/resume/analyze`
+       const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/resume/analyze`
       const response = await fetch(REACT_APP_API_URL,{
         method : "POST",
         headers : {'Content-Type' : 'application/json' , "Authorization": `Bearer ${token}`, },

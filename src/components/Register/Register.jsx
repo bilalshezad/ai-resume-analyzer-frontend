@@ -31,7 +31,7 @@ export default function Register() {
     }
 
     try {
-     const REACT_APP_API_URL = `http://localhost:5000/user/register`
+     const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/register`
       const response = await fetch(REACT_APP_API_URL, {
         method: "POST",
         headers: {

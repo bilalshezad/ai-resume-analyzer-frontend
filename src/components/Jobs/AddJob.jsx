@@ -23,7 +23,7 @@ export default function AddJob({ reload }) {
       return;
     }
       const LoadingToast = handleLoading("Adding your job..... ⏳") 
-       const REACT_APP_API_URL = `http://localhost:5000/user/add/job`
+       const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/add/job`
       const res = await fetch(REACT_APP_API_URL, {
         method: "POST",
         headers: {

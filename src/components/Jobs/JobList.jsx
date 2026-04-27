@@ -8,7 +8,7 @@ export default function JobList({ reload }) {
   const token = localStorage.getItem("Token");
 
   const loadJobs = async () => {
-     const REACT_APP_API_URL = `http://localhost:5000/user/add/job`
+     const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/add/job`
     const res = await fetch(REACT_APP_API_URL, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -25,7 +25,7 @@ export default function JobList({ reload }) {
 // loadJobs()
   // DELETE
   const deleteJob = async (id) => {
-    const REACT_APP_API_URL = `http://localhost:5000/user/add/job/${id}`
+    const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/add/job/${id}`
     await fetch(REACT_APP_API_URL, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
@@ -41,7 +41,7 @@ export default function JobList({ reload }) {
 
   // SAVE EDIT
   const saveEdit = async () => {
-    const REACT_APP_API_URL = `http://localhost:5000/user/add/job/${editId}`
+    const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/add/job/${editId}`
     await fetch(REACT_APP_API_URL, {
       method: "POST",
       headers: {

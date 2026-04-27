@@ -28,7 +28,7 @@ export default function Login() {
     }
 
     try {
-      const REACT_APP_API_URL = `http://localhost:5000/user/login`
+      const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/login`
       const response = await fetch(REACT_APP_API_URL, {
         method: "POST",
         headers: {
