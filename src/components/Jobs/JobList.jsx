@@ -1,4 +1,4 @@
-import React, {  useState , useEffect} from "react";
+import React, {  useState , useEffect, useCallback} from "react";
   
 export default function JobList({ reload }) {
   const [jobs, setJobs] = useState([]);
@@ -7,7 +7,7 @@ export default function JobList({ reload }) {
   const [editForm, setEditForm] = useState({});
   const token = localStorage.getItem("Token");
 
-  const loadJobs = async () => {
+  const loadJobs = useCallback(async () => {
      const REACT_APP_API_URL = `https://ai-resume-analyzer-backend-eight.vercel.app/user/add/job`
     const res = await fetch(REACT_APP_API_URL, {
       headers: { Authorization: `Bearer ${token}` },
@@ -15,11 +15,11 @@ export default function JobList({ reload }) {
 
     const data = await res.json();
     setJobs(Array.isArray(data.job) ? data.job : []);
-  };
+  }, [token]);
 
   useEffect(() => {
-  loadJobs();
-}, [loadJobs]); // ✅ correct
+    loadJobs();
+  }, [loadJobs]);
 
 
 // loadJobs()
