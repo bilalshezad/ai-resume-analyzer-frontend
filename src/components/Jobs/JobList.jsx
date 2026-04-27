@@ -19,7 +19,7 @@ export default function JobList({ reload }) {
 
   useEffect(() => {
   loadJobs();
-}, []); // ✅ correct
+}, [loadJobs]); // ✅ correct
 
 
 // loadJobs()
